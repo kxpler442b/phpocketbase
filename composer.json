@@ -12,7 +12,6 @@
             "email": "benmoss2002@fastmail.co.uk"
         }
     ],
-    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Phpocketbase\\": "src/"

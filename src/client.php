@@ -50,6 +50,11 @@ class Client
         $this->setHeader('Authorisation', $token);
     }
 
+    public function getBaseUri()
+    {
+        return $this->baseUri;
+    }
+
     /**
      * Return the HTTP client
      *
@@ -88,11 +93,6 @@ class Client
     public function getRest()
     {
         return new Rest($this);
-    }
-
-    public function getQueryBuilder()
-    {
-        return new QueryBuilder($this);
     }
 
     public function setHeader(string $header, string $value) : void
