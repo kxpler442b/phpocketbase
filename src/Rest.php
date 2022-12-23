@@ -51,7 +51,7 @@ class Rest
             'headers' => $this->client->getHeaders()
         ];
 
-        $this->result = $this->client->executeHttpRequest('GET', $uri, $options);
+        $this->result = (array) $this->client->executeHttpRequest('GET', $uri, $options);
     }
 
     public function search()
