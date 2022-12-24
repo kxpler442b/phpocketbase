@@ -24,7 +24,7 @@ class CrudService extends BaseService
         return $this->result;
     }
 
-    public function list(string $collection, array $query) : void
+    public function list(string $collection, string $query) : void
     {
         $requestBuilder = $this->client->getRequestBuilder();
 
