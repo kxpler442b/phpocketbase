@@ -24,11 +24,25 @@ class CrudService extends BaseService
         return $this->result;
     }
 
-    public function list(string $collection, string $query) : void
+    public function getRecord(string $collection, string $id, string $query) : void
     {
         $requestBuilder = $this->client->getRequestBuilder();
 
-        $url = $requestBuilder->buildCrudRequest($this->baseCrudPath(), $collection, '', $query);
+        $url = $requestBuilder->buildCrudRequest($this->baseCrudPath(), $collection, $id, $query);
+
+        $options = [
+            'headers' => $this->client->getHeaders(),
+            'json' => $this->client->getJson()
+        ];
+
+        $this->result = $this->client->executeHttpRequest('GET', $url, $options);
+    }
+
+    public function getRecordList(string $collection, string $query) : void
+    {
+        $requestBuilder = $this->client->getRequestBuilder();
+
+        $url = $requestBuilder->buildCrudRequest($this->baseCrudPath(), $collection, false, $query);
 
         $options = [
             'headers' => $this->client->getHeaders(),
