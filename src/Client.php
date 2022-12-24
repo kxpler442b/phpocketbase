@@ -145,7 +145,7 @@ class Client
     {
         try {
             $this->response = $this->httpClient->request($method, $url, $options);
-            return json_decode((string) $this->response->getBody());
+            return (array) json_decode((string) $this->response->getBody());
         } catch(\GuzzleHttp\Exception\RequestException $error) {
             throw $error;
         } catch(\GuzzleHttp\Exception\ConnectException $error) {
