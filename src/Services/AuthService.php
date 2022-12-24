@@ -17,6 +17,8 @@ use Phpocketbase\Services\BaseService;
 
 class AuthService extends BaseService
 {
+    private $result;
+
     public function authWithPassword(string $collection, string $username, string $password)
     {
         $requestBuilder = $this->client->getRequestBuilder();
@@ -34,5 +36,7 @@ class AuthService extends BaseService
         ];
 
         $this->result = $this->client->executeHttpRequest('POST', $request, $options);
+
+        return $this->result;
     }
 }
