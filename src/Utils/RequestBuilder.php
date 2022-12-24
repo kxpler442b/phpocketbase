@@ -23,10 +23,10 @@ class RequestBuilder
     {
         $this->query = $query;
 
-        if (!$id) {
-            $this->path = $basePath . $collection . '/records';
-        } else {
+        if (isset($id) && $id !== '') {
             $this->path = $basePath . $collection . '/records/' . $id;
+        } else {
+            $this->path = $basePath . $collection . '/records';
         };
 
         $url = $this->path . '?' . $this->query;
