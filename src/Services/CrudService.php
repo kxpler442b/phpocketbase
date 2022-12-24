@@ -28,7 +28,7 @@ class CrudService extends BaseService
     {
         $requestBuilder = $this->client->getRequestBuilder();
 
-        $url = $requestBuilder->buildCrudRequest($this->baseCrudPath(), $collection, $query);
+        $url = $requestBuilder->buildCrudRequest($this->baseCrudPath(), $collection, '', $query);
 
         $options = [
             'headers' => $this->client->getHeaders(),
