@@ -57,7 +57,7 @@ class CrudService extends BaseService
     {
         return join('', [
             $this->client->getPocketbaseUri(),
-            'api/collections'
+            'collections/'
         ]);
     }
 }
