@@ -32,7 +32,6 @@ class CrudService extends BaseService
 
         $options = [
             'headers' => $this->client->getHeaders(),
-            'json' => $this->client->getJson()
         ];
 
         $this->result = $this->client->executeHttpRequest('GET', $url, $options);
@@ -46,7 +45,6 @@ class CrudService extends BaseService
 
         $options = [
             'headers' => $this->client->getHeaders(),
-            'json' => $this->client->getJson()
         ];
 
         $this->result = $this->client->executeHttpRequest('GET', $url, $options);

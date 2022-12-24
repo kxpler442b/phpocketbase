@@ -33,4 +33,11 @@ class RequestBuilder
 
         return $url;
     }
+
+    public function buildAuthRequest(string $basePath, string $collection) : string
+    {
+        $this->path = $basePath . 'collections/' . $collection . 'auth-with-password';
+
+        return $this->path;
+    }
 }

@@ -75,16 +75,6 @@ class Client
         return $this->headers;
     }
 
-    public function getJson() : string
-    {
-        return json_encode($this->json);
-    }
-
-    public function setJson(string $key, string $value) : void
-    {
-        $this->json[$key] = $value;
-    }
-
     /**
      * Set the headers used in the http request
      *
