@@ -21,15 +21,16 @@ class RequestBuilder
 
     public function buildCrudRequest(string $basePath, string $collection, string $id, string $query) : string
     {
+        $this->query = $query;
+
         if (!$id) {
             $this->path = $basePath . $collection . '/records';
         } else {
             $this->path = $basePath . $collection . '/records/' . $id;
         };
 
-        return join('?', [
-            $this->path,
-            $this->query
-        ]);
+        $url = $this->path . '?' . $this->query;
+
+        return $url;
     }
 }
