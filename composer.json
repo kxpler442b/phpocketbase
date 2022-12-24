@@ -3,7 +3,8 @@
     "description": "phpocketbase is a library written in PHP that allows you to communicate with a Pocketbase instance using the RESTful api.",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^7.5"
+        "guzzlehttp/guzzle": "^7.5",
+        "firebase/php-jwt": "^6.3"
     },
     "license": "MIT",
     "authors": [
