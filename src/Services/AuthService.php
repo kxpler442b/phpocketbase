@@ -23,7 +23,7 @@ class AuthService extends BaseService
     {
         $requestBuilder = $this->client->getRequestBuilder();
 
-        $request = $requestBuilder->buildAuthUrl($this->client->getPocketbaseUri(), $collection);
+        $request = $requestBuilder->buildAuthRequest($this->client->getPocketbaseUri(), $collection);
 
         $body = [
             'identity' => $username,
